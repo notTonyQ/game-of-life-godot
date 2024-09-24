@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqjl70qdqdwk7"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_2jkbb"]
+[ext_resource type="Texture2D" uid="uid://clduhh6p6g5ws" path="res://none.png" id="1_4dnns"]
+[ext_resource type="Texture2D" uid="uid://cafbjt0ghfvyg" path="res://cell.png" id="2_qcvqm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emu2m"]
+texture = ExtResource("1_4dnns")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugr10"]
+texture = ExtResource("2_qcvqm")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5bo0r"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_emu2m")
+sources/1 = SubResource("TileSetAtlasSource_ugr10")
+
+[node name="Main" type="TileMapLayer"]
+tile_set = SubResource("TileSet_5bo0r")
+script = ExtResource("1_2jkbb")
+width = 40
+height = 40
+
+[node name="Camera2D" type="Camera2D" parent="."]
